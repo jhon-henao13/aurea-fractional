@@ -18,8 +18,8 @@ export default function Hero() {
         
         {/* Main Typography Block */}
         <div className="max-w-3xl mt-auto md:mb-12 animate-fade-in-up">
-          <span className="text-gold-500 uppercase tracking-[0.3em] text-lg md:text-2xl font-medium inline-block mb-8">
-            Tu Segunda Casa
+          <span className="text-gold-500 uppercase tracking-[0.3em] text-base md:text-xl font-medium inline-block mb-8">
+            COPROPIEDAD DE LUJO
           </span>
           <h1 className="flex flex-col gap-2 text-white font-serif text-6xl md:text-7xl !font-extralight leading-tight tracking-wide">
             Cabaña Pastores
