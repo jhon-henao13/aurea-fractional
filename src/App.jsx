@@ -4,6 +4,7 @@ import ExperienceGrid from './components/ExperienceGrid';
 import SmartOwnership from './components/SmartOwnership';
 import SpacesToShare from './components/SpacesToShare';
 import InternalDistribution from './components/InternalDistribution';
+import FractionalModel from './components/FractionalModel';
 import Footer from './components/Footer';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <SmartOwnership />
         <SpacesToShare />
         <InternalDistribution />
+        <FractionalModel />
       </main>
       <Footer />
     </div>

@@ -21,7 +21,7 @@ export default function InternalDistribution() {
   ];
 
   return (
-    <section id="distribucion" className="bg-[#f4f0e8] py-16 md:py-24 px-6 md:px-16 overflow-hidden relative">
+    <section id="distribucion" className="bg-[#f4f0e8] py-10 md:py-16 px-6 md:px-16 overflow-hidden relative">
       <div className="max-w-7xl mx-auto flex flex-col space-y-12 items-center">
         
         {/* CONTROL DE INTERFAZ: Selector de Plantas Premium */}
@@ -56,7 +56,8 @@ export default function InternalDistribution() {
         </div>
 
         {/* CONTENEDOR DE CONTENIDO CON ANIMACIÓN DE TRANSICIÓN CRUZADA */}
-        <div className="w-full relative min-h-[750px] lg:min-h-[600px] mt-6">
+        {/* CONTENEDOR DE CONTENIDO CON ANIMACIÓN DE TRANSICIÓN CRUZADA */}
+        <div className="w-full relative min-h-[1000px] min-[1000px]:min-h-[750px] mt-6">
           
           {/* ================= PLANTA BAJA BLOCK (Imagen Izquierda, Texto Derecha) ================= */}
           <div

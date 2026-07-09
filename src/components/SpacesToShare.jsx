@@ -60,7 +60,7 @@ export default function SpacesToShare() {
   ];
 
   return (
-    <section id="proyecto" className="bg-[#f4f0e8] py-16 md:py-20 px-6 md:px-16 overflow-hidden relative">
+    <section id="proyecto" className="bg-[#f4f0e8] py-8 md:py-12 px-6 md:px-16 overflow-hidden relative">
       <div className="max-w-7xl mx-auto flex flex-col space-y-12 md:space-y-16">
         
         {/* TOP BLOCK: Main Headings spanning full width */}
