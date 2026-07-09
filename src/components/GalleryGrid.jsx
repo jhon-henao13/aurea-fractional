@@ -70,6 +70,13 @@ export default function GalleryGrid() {
         ))}
       </div>
 
+      {/* Leyenda legal / Disclaimer sutil al pie de la grilla */}
+      <div className="w-full text-center px-6 pt-4 pb-2">
+        <p className="text-[9px] md:text-[10px] tracking-widest text-[#F4F1EA]/30 font-sans uppercase max-w-4xl mx-auto leading-relaxed balance">
+          LAS IMÁGENES MOSTRADAS SON SOLO PARA FINES ILUSTRATIVOS Y PUEDEN NO SER LA REPRESENTACIÓN EXACTA DEL PRODUCTO. LAS ESPECIFICACIONES Y DEMÁS PARTICULARIDADES ESTÁN SUJETAS A MODIFICACIONES.
+        </p>
+      </div>
+
       {/* ================= LIGHTBOX CINEMÁTICO PREMIUM ================= */}
       {lightboxIndex !== null && (
         <div 
@@ -104,6 +111,7 @@ export default function GalleryGrid() {
               className="max-w-full max-h-[72vh] object-contain shadow-2xl border border-white/5 animate-scale-up"
               onClick={(e) => e.stopPropagation()}
             />
+
             {/* Pie de foto / Contador editorial */}
             <div className="text-center space-y-1 pt-2 animate-fade-in" onClick={(e) => e.stopPropagation()}>
               <p className="text-gold-400 font-serif italic text-sm md:text-base">
@@ -112,7 +120,12 @@ export default function GalleryGrid() {
               <p className="text-[#F4F1EA]/40 font-sans text-xs uppercase tracking-widest">
                 {lightboxIndex + 1} / {images.length}
               </p>
+              {/* Disclaimer legal micro en Lightbox */}
+              <p className="text-[8px] tracking-wider text-[#F4F1EA]/20 font-sans uppercase max-w-2xl pt-2 mx-auto leading-normal">
+                LAS IMÁGENES MOSTRADAS SON SOLO PARA FINES ILUSTRATIVOS Y PUEDEN NO SER LA REPRESENTACIÓN EXACTA DEL PRODUCTO.
+              </p>
             </div>
+
           </div>
 
           {/* Flecha Derecha */}

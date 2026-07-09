@@ -20,6 +20,13 @@ export default {
           graphite: '#4A534D',  // Gris elegante satinado para las descripciones
         }
       },
+
+      keyframes: {
+        shimmer: {
+          '100%': { transform: 'translateX(100%)' },
+        }
+      },
+
       fontFamily: {
         serif: ['Playfair Display', 'Georgia', 'serif'],
         sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],

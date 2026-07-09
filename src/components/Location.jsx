@@ -33,7 +33,7 @@ export default function Location() {
 
             {/* Párrafo Introductorio */}
             <p className="text-black/60 font-sans font-normal text-lg md:text-[23px] leading-relaxed max-w-2xl">
-              A solo 40 minutos de Guadalajara se encuentra uno de los Pueblos Mágicos más hermosos de México. Su esencia combina:
+              A menos de 2 horas de Guadalajara encuentras Tapalpa, Pueblo Mágico de bosques y clima templado en el sur de Jalisco.
             </p>
 
             {/* Lista de viñetas premium personalizadas con micro-interacciones */}
@@ -44,9 +44,9 @@ export default function Location() {
                 </span>
                 <p className="text-[#4A534D] font-sans font-light text-base md:text-[23px] leading-relaxed">
                   <strong className="font-semibold text-black/60 transition-colors duration-300 group-hover/item:text-gold-600">
-                    Naturaleza:
+                    Cabaña Pastores:
                   </strong>{" "}
-                  Clima templado y bosques de pino y encino.
+                  se encuentra en Rincón de los Pastores, un fraccionamiento campestre rodeado de montañas, a solo 10 minutos del centro. 
                 </p>
               </li>
 
@@ -56,16 +56,16 @@ export default function Location() {
                 </span>
                 <p className="text-[#4A534D] font-sans font-light text-base md:text-[23px] leading-relaxed">
                   <strong className="font-semibold text-black/60 transition-colors duration-300 group-hover/item:text-gold-600">
-                    Cultura:
+                    Casas espaciadas entre sí:
                   </strong>{" "}
-                  Arquitectura colonial preservada y una comunidad de artistas.
+                  para que la privacidad no dependa solo de las paredes de tu cabaña.
                 </p>
               </li>
             </ul>
 
             {/* Párrafo de Cierre Poético */}
             <p className="text-[#4A534D] font-sans font-normal text-lg md:text-[23px] leading-relaxed max-w-2xl pt-2 border-t border-black/[0.04]">
-              Tapalpa es un refugio de mañanas brumosas donde el tiempo se ralentiza y las conexiones se vuelven profundas.
+              Lo suficientemente retirada del pueblo, lo suficientemente cerca para visitarlo cuando quieras.
             </p>
           </div>
 

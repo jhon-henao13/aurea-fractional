@@ -34,7 +34,7 @@ export default function FractionalModel() {
             Sencillo y elegante
           </p>
           <p className="text-[#f4f0e8]/80 font-sans font-normal text-lg md:text-2xl leading-relaxed max-w-5xl pt-4">
-            Diez fracciones. Derechos reales sobre el inmueble a través de un fideicomiso. Acceso garantizado a espacios compartidos. Una ruta clara de salida si decides no continuar.
+            Diez fracciones con derechos reales sobre el inmueble, respaldados por un fideicomiso. Cada copropietario accede por igual a los espacios, con reglas de salida establecidas desde el inicio.
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export default function FractionalModel() {
               Ruta de Salida
             </h4>
             <p className="text-[#4A534D] font-sans font-light text-base md:text-lg leading-relaxed">
-              Si en el futuro deseas salir de la co-propiedad, tienes tres opciones claras: <span className="font-normal text-black/80">Cesión de derechos fiduciarios a un tercero</span> · <span className="font-normal text-black/80">Derecho de tanteo entre los co-propietarios</span> · <span className="font-normal text-black/80">Herencia directa a tus herederos vía fideicomiso</span>. Transparencia y certeza.
+              Si en el futuro decides salir de la copropiedad, cuentas con tres caminos definidos: cesión de tus derechos fiduciarios a un tercero, derecho de preferencia entre los copropietarios actuales, o herencia directa a tus herederos a través del fideicomiso. Reglas claras desde el día uno. Los detalles completos se revisan en tu asesoría personalizada.
             </p>
           </div>
         </div>

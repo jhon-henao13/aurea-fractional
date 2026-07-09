@@ -7,6 +7,7 @@ import InternalDistribution from './components/InternalDistribution';
 import FractionalModel from './components/FractionalModel';
 import Location from './components/Location';
 import GalleryGrid from './components/GalleryGrid'
+import ContactCTA from './components/ContactCTA';
 import Footer from './components/Footer';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <FractionalModel />
         <Location />
         <GalleryGrid />
+        <ContactCTA />
       </main>
       <Footer />
     </div>
