@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ExperienceGrid from './components/ExperienceGrid';
+import SmartOwnership from './components/SmartOwnership';
 import Footer from './components/Footer';
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
       <main>
         <Hero />
         <ExperienceGrid />
-        {/* Aquí irán las secciones de Co-Propiedad, Proyecto, etc. */}
+        <SmartOwnership />
+        {/* Próximas secciones aquí */}
       </main>
       <Footer />
     </div>
