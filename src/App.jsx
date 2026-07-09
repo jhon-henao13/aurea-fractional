@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ExperienceGrid from './components/ExperienceGrid';
 import SmartOwnership from './components/SmartOwnership';
+import SpacesToShare from './components/SpacesToShare';
 import Footer from './components/Footer';
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
         <Hero />
         <ExperienceGrid />
         <SmartOwnership />
-        {/* Próximas secciones aquí */}
+        <SpacesToShare />
+        
       </main>
       <Footer />
     </div>

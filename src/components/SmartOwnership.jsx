@@ -2,11 +2,11 @@ import salaFogata from '../assets/sala-fogata.jpeg';
 
 export default function SmartOwnership() {
   const services = [
-    "Limpieza y mantenimiento",
-    "Suministros básicos",
-    "Seguridad 24/7",
-    "Reserva de servicios",
-    "Administración del fideicomiso"
+    "Casa lista a tu llegada",
+    "Mantenimiento y jardinería integral",
+    "Seguridad y vigilancia 24/7",
+    "Reportes periódicos de administración y mantenimiento",
+    "Reserva de servicios y experiencias"
   ];
 
   return (
@@ -14,23 +14,22 @@ export default function SmartOwnership() {
       <div className="max-w-7xl mx-auto flex flex-col space-y-12 md:space-y-16">
         
         {/* TOP BLOCK: Main Headings spanning full width */}
-        <div className="max-w-3xl space-y-1 animate-fade-in-up">
+        <div className="max-w-3xl space-y-4 animate-fade-in-up">
           <h2 className="text-black/80 font-serif text-4xl md:text-[45px] font-extralight tracking-wide leading-tight">
-            Co-Propiedad Inteligente
+            La cabaña es tuya.
           </h2>
-          <p className="text-gold-600 font-serif font-light italic text-4xl md:text-[42px] tracking-wide leading-none">
-            Tú disfrutas. Nosotros nos encargamos.
+          <p className="text-gold-600 font-serif font-light italic text-5xl md:text-[52px] tracking-wide leading-none">
+            La gestión, nuestra.
           </p>
         </div>
 
         {/* BOTTOM BLOCK: Asymmetric Two-Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start !mt-10">
           
           {/* Left Column: Description & Premium Services List */}
           <div className="lg:col-span-6 space-y-10 relative">
             <p className="text-black/70 font-sans font-light text-lg md:text-[26px] leading-relaxed max-w-xl">
-              La gestión de una segunda casa es compleja. Nosotros simplificamos todo: 
-              mantenimiento, administración, servicios. Tú solo disfrutas con tu familia.
+              El lugar al que siempre quieres volver, sin la carga que implica mantenerlo.
             </p>
 
             {/* Services Group */}
@@ -39,7 +38,7 @@ export default function SmartOwnership() {
                 Servicios incluidos:
               </h4>
               
-              <ul className="space-y-4">
+              <ul className="space-y-4 !mt-8">
                 {services.map((service, index) => (
                   <li 
                     key={index} 
@@ -58,7 +57,7 @@ export default function SmartOwnership() {
                       </svg>
                     </div>
                     
-                    <span className="transition-colors duration-300 group-hover:text-gold-600">
+                    <span className="transition-colors text-black/90 duration-300 group-hover:text-gold-600">
                       {service}
                     </span>
 
@@ -81,7 +80,7 @@ export default function SmartOwnership() {
               <img 
                 src={salaFogata} 
                 alt="Interior residencial premium con fogata" 
-                className="w-full h-full object-cover aspect-[4/3] transform scale-100 transition-transform duration-[3s] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.02]"
+                className="w-full h-full object-cover aspect-[4/3] rounded-md transform scale-100 transition-transform duration-[3s] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.02]"
                 loading="lazy"
               />
               {/* Ultra smooth environmental lighting overlay */}
