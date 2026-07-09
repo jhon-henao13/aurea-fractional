@@ -6,6 +6,7 @@ import SpacesToShare from './components/SpacesToShare';
 import InternalDistribution from './components/InternalDistribution';
 import FractionalModel from './components/FractionalModel';
 import Location from './components/Location';
+import GalleryGrid from './components/GalleryGrid'
 import Footer from './components/Footer';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <InternalDistribution />
         <FractionalModel />
         <Location />
+        <GalleryGrid />
       </main>
       <Footer />
     </div>
