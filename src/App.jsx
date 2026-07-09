@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import ExperienceGrid from './components/ExperienceGrid';
 import SmartOwnership from './components/SmartOwnership';
 import SpacesToShare from './components/SpacesToShare';
+import InternalDistribution from './components/InternalDistribution';
 import Footer from './components/Footer';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
         <ExperienceGrid />
         <SmartOwnership />
         <SpacesToShare />
-        
+        <InternalDistribution />
       </main>
       <Footer />
     </div>

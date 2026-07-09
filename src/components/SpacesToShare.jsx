@@ -64,12 +64,12 @@ export default function SpacesToShare() {
       <div className="max-w-7xl mx-auto flex flex-col space-y-12 md:space-y-16">
         
         {/* TOP BLOCK: Main Headings spanning full width */}
-        <div className="max-w-3xl space-y-6 animate-fade-in-up">
+        <div className="max-w-5xl space-y-6 animate-fade-in-up">
           <h2 className="text-black/80 font-serif text-4xl md:text-[45px] font-extralight tracking-wide leading-tight">
             Espacios para Compartir
           </h2>
-          <p className="text-gold-600 font-serif font-light italic text-4xl md:text-[48px] tracking-wide leading-none">
-            La arquitectura es protagonista
+          <p className="text-gold-600 font-serif font-light italic text-4xl md:text-[45px] tracking-wide leading-none">
+            Pensada para quedarse en la memoria
           </p>
         </div>
 
@@ -99,7 +99,7 @@ export default function SpacesToShare() {
           {/* Right Column: Narrative Block & Data Specs Grid */}
           <div className="lg:col-span-6 space-y-10">
             <p className="text-black/70 font-sans font-normal text-xl md:text-[24px] leading-relaxed max-w-xl">
-              Una residencia diseñada para reunirse. 1,750m2 de terreno. Capacidad para 14 huéspedes. Cada espacio cuenta una historia.
+              Una residencia <b>de lujo</b> diseñada para reunir a toda la familia, con espacio de sobra para invitar cuando tú decidas.
             </p>
 
             {/* Technical Metrics / Icons Row */}
