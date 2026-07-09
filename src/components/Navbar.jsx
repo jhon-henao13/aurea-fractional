@@ -89,7 +89,7 @@ export default function Navbar() {
       />
 
       {/* ================= RIGHT SIDE DRAWER MÓVIL ================= */}
-      <div className={`fixed top-0 right-0 h-full w-[80vw] sm:w-[360px] bg-luxury-dark/98 backdrop-blur-2xl border-l border-white/10 z-50 transform transition-transform duration-500 cubic-drawer md:hidden flex flex-col justify-between p-8 pt-24 ${
+      <div className={`fixed top-0 right-0 h-full w-[70vw] sm:w-[360px] bg-luxury-dark/98 backdrop-blur-2xl border-l border-white/10 z-50 transform transition-transform duration-500 cubic-drawer md:hidden flex flex-col justify-between p-8 pt-24 ${
         isOpen ? 'translate-x-0 shadow-2xl' : 'translate-x-full'
       }`}>
         
