@@ -43,7 +43,7 @@ export default function Navbar() {
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <button className="bg-gold-500/90 hover:bg-gold-500 text-white text-xs tracking-widest uppercase px-6 py-3 rounded-sm transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-gold-500/20">
+          <button className="bg-gold-500/90 hover:bg-gold-500 text-white text-xs tracking-widest uppercase px-6 py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-gold-500/20">
             Recibe el brochure
           </button>
         </div>

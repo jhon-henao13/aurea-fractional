@@ -14,6 +14,7 @@ export default {
         },
         luxury: {
           dark: '#0B0F12',
+          forest: '#1E2922', // El verde profundo premium de la imagen
         }
       },
       fontFamily: {

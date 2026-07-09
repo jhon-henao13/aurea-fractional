@@ -21,13 +21,13 @@ export default function Hero() {
           <span className="text-gold-500 uppercase tracking-[0.3em] text-base md:text-xl font-medium inline-block mb-8">
             COPROPIEDAD DE LUJO
           </span>
-          <h1 className="flex flex-col gap-2 text-white font-serif text-6xl md:text-7xl !font-extralight leading-tight tracking-wide">
+          <h1 className="flex flex-col gap-2 text-slate-200 font-serif text-6xl md:text-7xl !font-extralight leading-tight tracking-wide">
             Cabaña Pastores
-            <span className="block text-gold-500/90 font-serif font-light italic mt-1 text-4xl md:text-6xl">
+            <span className="block text-gold-500/90 font-serif font-extralight italic mt-1 text-4xl md:text-6xl">
               Tapalpa, Jalisco
             </span>
           </h1>
-          <p className="text-white/70 font-light text-lg md:text-2xl mt-8 max-w-lg leading-relaxed border-l border-gold-500/40 pl-4">
+          <p className="text-white/80 font-light text-lg md:text-2xl mt-8 max-w-lg leading-relaxed border-l border-gold-500/40 pl-4">
             El lujo no es tener más. Es tener un lugar al que siempre quieras volver.
           </p>
         </div>
