@@ -5,6 +5,7 @@ import SmartOwnership from './components/SmartOwnership';
 import SpacesToShare from './components/SpacesToShare';
 import InternalDistribution from './components/InternalDistribution';
 import FractionalModel from './components/FractionalModel';
+import Location from './components/Location';
 import Footer from './components/Footer';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <SpacesToShare />
         <InternalDistribution />
         <FractionalModel />
+        <Location />
       </main>
       <Footer />
     </div>
