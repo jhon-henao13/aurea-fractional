@@ -1,9 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import plantaBaja from '../assets/planta-baja.jpeg';
 import plantaAlta from '../assets/planta-alta.jpeg';
 
 export default function InternalDistribution() {
   const [activeTab, setActiveTab] = useState('baja'); // 'baja' o 'alta'
+
+  const [offsetY, setOffsetY] = useState(0);
+  const parallaxRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!parallaxRef.current) return;
+      const rect = parallaxRef.current.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      
+      // Calculamos el desplazamiento solo cuando el contenedor entra en el viewport
+      if (rect.top < viewportHeight && rect.bottom > 0) {
+        // Multiplicador 0.15 para que baje progresivamente con el scroll
+        const scrollPosition = (viewportHeight - rect.top) * 0.15;
+        setOffsetY(scrollPosition);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const bajaFeatures = [
     { num: "01", title: "Cocina de alta gama", desc: "Diseñada para cocinar, compartir y disfrutar largas sobremesas." },
@@ -158,10 +179,35 @@ export default function InternalDistribution() {
         </div>
 
         {/* Marca de Agua Elegante del Arbolito al final de la Sección */}
-        <div className="pt-8 opacity-30 pointer-events-none">
-          <svg className="w-6 h-8 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M12 2L5 12h4v4h3v4h2v-4h3v-4h4L12 2z" />
-          </svg>
+        {/* Marca de Agua Premium con Scroll Parallax y Bounce (Estilo Hero) */}
+        {/* Marca de Agua Premium con Scroll Parallax Estilo Hero Mínimalista */}
+        <div 
+          ref={parallaxRef}
+          className="w-full flex justify-center pt-14 pb-4 relative z-10 pointer-events-none overflow-visible"
+        >
+          {/* Contenedor con físicas de scroll reactivas */}
+          <div 
+            className="flex flex-col items-center transition-transform duration-500 ease-out will-change-transform"
+            style={{ transform: `translateY(${offsetY}px)` }}
+          >
+            {/* Animación de rebote ralentizada a 3 segundos para máxima elegancia */}
+            <div className="flex flex-col items-center justify-center animate-[bounce_3s_infinite]">
+              
+              {/* Flechita Superior (Chevron indicador copiado del concepto de navegación del Hero) */}
+              <svg className="w-3.5 h-3.5 text-gold-600/70 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+              </svg>
+
+              {/* Icono de Pino Estilizado, más visible y nítido (Sin bordes ni fondos intermediarios) */}
+              <svg className="w-6 h-6 text-gold-600 filter drop-shadow-[0_2px_4px_rgba(44,53,46,0.08)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.1} d="M12 2L5 12h4v4h3v4h2v-4h3v-4h4L12 2z" />
+              </svg>
+              
+              {/* Línea de fuga arquitectónica vertical degradada */}
+              <div className="w-[1px] h-14 bg-gradient-to-b from-gold-600 via-gold-600/30 to-transparent mt-2.5"></div>
+              
+            </div>
+          </div>
         </div>
 
       </div>

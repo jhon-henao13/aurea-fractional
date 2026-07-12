@@ -1,6 +1,29 @@
+import { useState, useEffect, useRef } from 'react';
 import bgHero from '../assets/bg-hero-diego.jpeg';
 
 export default function Hero() {
+
+  const [offsetY, setOffsetY] = useState(0);
+  const heroParallaxRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!heroParallaxRef.current) return;
+      const rect = heroParallaxRef.current.getBoundingClientRect();
+      
+      // Dado que el Hero está al inicio, calculamos desde el punto cero del scroll
+      if (rect.bottom > 0) {
+        // Multiplicador 0.15 para mantener consistencia exacta con la velocidad de distribución
+        const scrollPosition = window.scrollY * 0.15;
+        setOffsetY(scrollPosition);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
   return (
     <div className="relative h-screen w-full overflow-hidden bg-luxury-dark">
       {/* Background Image with Parallax & Ken Burns Effect */}
@@ -33,13 +56,37 @@ export default function Hero() {
         </div>
 
         {/* Bottom indicator / Ornament */}
-        <div className="flex flex-col items-center justify-center mt-auto animate-bounce">
-          {/* Pequeño icono de pino minimalista estilizado */}
-          <svg className="w-5 h-5 text-gold-500/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 3L4 14h5v5h6v-5h5L12 3z" />
-          </svg>
-          <div className="w-[1px] h-8 bg-gradient-to-b from-gold-500/50 to-transparent mt-2"></div>
+        {/* Bottom indicator / Ornament con Scroll Parallax Estilo Hero Avanzado */}
+        <div 
+          ref={heroParallaxRef}
+          className="w-full flex justify-center mt-auto relative z-10 pointer-events-none overflow-visible"
+        >
+          {/* Contenedor con físicas de scroll acopladas */}
+          <div 
+            className="flex flex-col items-center transition-transform duration-500 ease-out will-change-transform"
+            style={{ transform: `translateY(${offsetY}px)` }}
+          >
+            {/* Animación de rebote premium ralentizada a 3 segundos */}
+            <div className="flex flex-col items-center justify-center animate-[bounce_3s_infinite]">
+              
+              {/* Flechita Superior (Chevron indicador) */}
+              <svg className="w-3.5 h-3.5 text-gold-500/70 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+              </svg>
+
+              {/* Icono de Pino Estilizado, más visible y nítido (Sin bordes ni marcos pesados) */}
+              <svg className="w-6 h-6 text-gold-500 filter drop-shadow-[0_0_12px_rgba(212,175,55,0.4)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M12 2L5 12h4v4h3v4h2v-4h3v-4h4L12 2z" />
+              </svg>
+              
+              {/* Línea de fuga arquitectónica vertical de alta gama */}
+              <div className="w-[1px] h-14 bg-gradient-to-b from-gold-500 via-gold-500/30 to-transparent mt-2.5"></div>
+              
+            </div>
+          </div>
         </div>
+
+        
       </div>
     </div>
   );
