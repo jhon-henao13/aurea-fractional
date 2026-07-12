@@ -57,7 +57,7 @@ export default function InternalDistribution() {
 
         {/* CONTENEDOR DE CONTENIDO CON ANIMACIÓN DE TRANSICIÓN CRUZADA */}
         {/* CONTENEDOR DE CONTENIDO CON ANIMACIÓN DE TRANSICIÓN CRUZADA */}
-        <div className="w-full relative min-h-[1000px] min-[1000px]:min-h-[750px] mt-6">
+        <div className="w-full relative min-h-[1050px] sm:min-h-[1100px] lg:min-h-[650px] mt-2">
           
           {/* ================= PLANTA BAJA BLOCK (Imagen Izquierda, Texto Derecha) ================= */}
           <div
@@ -69,15 +69,15 @@ export default function InternalDistribution() {
           >
             {/* Izquierda: Imagen */}
             {/* Izquierda: Imagen */}
-            <div className="lg:col-span-7 w-full order-1">
-              <div className="w-full aspect-[4/3] md:aspect-video lg:aspect-[4/3] relative overflow-hidden bg-black/[0.02] rounded-[2px] shadow-2xl border border-black/[0.02] group flex items-center justify-center">
+            <div className="lg:col-span-7 w-full order-1 flex justify-center items-center">
+              <div className="w-full max-w-[20rem] md:max-w-[25rem] relative overflow-hidden rounded-[2px] shadow-2xl border border-black/[0.05] group">
                 <img
                   src={plantaBaja}
                   alt="Plano distribución interna de la Planta Baja"
-                  className="w-full h-full max-h-full object-contain rotate-90 transform scale-100 transition-transform duration-[3s] group-hover:scale-[1.04]"
+                  className="w-full h-auto object-cover transform scale-100 transition-transform duration-[3s] group-hover:scale-[1.01] rounded-xl"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/[0.01] to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/[0.02] to-transparent pointer-events-none" />
               </div>
             </div>
 
@@ -140,15 +140,15 @@ export default function InternalDistribution() {
 
             {/* Derecha: Imagen (En mobile se posiciona arriba gracias a order-1 lg:order-2) */}
             {/* Derecha: Imagen (En mobile se posiciona arriba gracias a order-1 lg:order-2) */}
-            <div className="lg:col-span-7 w-full order-1 lg:order-2">
-              <div className="w-full aspect-[4/3] md:aspect-video lg:aspect-[4/3] relative overflow-hidden bg-black/[0.02] rounded-[2px] shadow-2xl border border-black/[0.02] group flex items-center justify-center">
+            <div className="lg:col-span-7 w-full order-1 lg:order-2 flex justify-center items-center">
+              <div className="w-full max-w-[20rem] md:max-w-[25rem] relative overflow-hidden rounded-[2px] shadow-2xl border border-black/[0.05] group">
                 <img
                   src={plantaAlta}
                   alt="Plano distribución interna de la Planta Alta"
-                  className="w-full h-full max-h-full object-contain rotate-90 transform scale-100 transition-transform duration-[3s] group-hover:scale-[1.04]"
+                  className="w-full h-auto object-cover transform scale-100 transition-transform duration-[3s] group-hover:scale-[1.01] rounded-xl"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/[0.01] to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/[0.02] to-transparent pointer-events-none" />
               </div>
             </div>
 
