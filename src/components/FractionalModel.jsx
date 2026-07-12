@@ -43,7 +43,7 @@ export default function FractionalModel() {
           {pillars.map((pillar, index) => (
             <div 
               key={index} 
-              className={`flex flex-col space-y-4 md:px-8 first:pl-6 last:pr-0 md:border-l border-gold-600/30 transition-all duration-500 group/item hover:translate-y-[-4px]`}
+              className={`flex flex-col space-y-4 md:px-8 first:pl-0 md:first:pl-6 last:pr-0 md:border-l border-gold-600/30 transition-all duration-500 group/item hover:translate-y-[-4px]`}
             >
               {/* Número o Símbolo Serif Grande */}
               <span className="text-gold-500 font-serif text-3xl md:text-4xl font-light tracking-tight transition-colors duration-300 group-hover/item:text-gold-400">
