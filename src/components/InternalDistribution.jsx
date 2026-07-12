@@ -46,34 +46,11 @@ export default function InternalDistribution() {
       <div className="max-w-7xl mx-auto flex flex-col space-y-12 items-center">
         
         {/* CONTROL DE INTERFAZ: Selector de Plantas Premium */}
-        <div className="flex flex-col items-center space-y-6 w-full">
+        {/* Encabezado de la Sección */}
+        <div className="flex flex-col items-center w-full mb-2">
           <span className="text-black/70 font-sans text-xs md:text-sm uppercase tracking-widest font-semibold">
             Distribución Interna
           </span>
-          
-          {/* Contenedor del Toggle con Marco Fino Estilo Galería */}
-          <div className="inline-flex p-1 border border-black/10 rounded-none bg-transparent relative z-10">
-            <button
-              onClick={() => setActiveTab('baja')}
-              className={`px-8 py-3 text-xs md:text-sm font-sans font-medium uppercase tracking-widest transition-all duration-500 min-w-[140px] md:min-w-[180px] ${
-                activeTab === 'baja'
-                  ? 'bg-[#2C352E] text-gold-600 shadow-lg'
-                  : 'text-black/60 hover:text-black hover:bg-black/[0.03]'
-              }`}
-            >
-              Planta Baja
-            </button>
-            <button
-              onClick={() => setActiveTab('alta')}
-              className={`px-8 py-3 text-xs md:text-sm font-sans font-medium uppercase tracking-widest transition-all duration-500 min-w-[140px] md:min-w-[180px] ${
-                activeTab === 'alta'
-                  ? 'bg-[#2C352E] text-gold-600 shadow-lg'
-                  : 'text-black/60 hover:text-black hover:bg-black/[0.03]'
-              }`}
-            >
-              Planta Alta
-            </button>
-          </div>
         </div>
 
         {/* CONTENEDOR DE CONTENIDO CON ANIMACIÓN DE TRANSICIÓN CRUZADA */}
@@ -90,8 +67,35 @@ export default function InternalDistribution() {
           >
             {/* Izquierda: Imagen */}
             {/* Izquierda: Imagen */}
-            <div className="lg:col-span-7 w-full order-1 flex justify-center items-center">
+            {/* Izquierda: Imagen con Selector Integrado */}
+            <div className="lg:col-span-7 w-full order-1 flex flex-col items-center space-y-6">
+              
+              {/* Contenedor del Toggle con Marco Fino Estilo Galería */}
+              <div className="inline-flex p-1 border border-black/10 rounded-none bg-transparent relative z-10">
+                <button
+                  onClick={() => setActiveTab('baja')}
+                  className={`px-8 py-3 text-xs md:text-sm font-sans font-medium uppercase tracking-widest transition-all duration-500 min-w-[140px] md:min-w-[180px] ${
+                    activeTab === 'baja'
+                      ? 'bg-[#2C352E] text-gold-600 shadow-lg'
+                      : 'text-black/60 hover:text-black hover:bg-black/[0.03]'
+                  }`}
+                >
+                  Planta Baja
+                </button>
+                <button
+                  onClick={() => setActiveTab('alta')}
+                  className={`px-8 py-3 text-xs md:text-sm font-sans font-medium uppercase tracking-widest transition-all duration-500 min-w-[140px] md:min-w-[180px] ${
+                    activeTab === 'alta'
+                      ? 'bg-[#2C352E] text-gold-600 shadow-lg'
+                      : 'text-black/60 hover:text-black hover:bg-black/[0.03]'
+                  }`}
+                >
+                  Planta Alta
+                </button>
+              </div>
+
               <div className="w-full max-w-[20rem] md:max-w-[25rem] relative overflow-hidden rounded-[2px] shadow-2xl border border-black/[0.05] group">
+              
                 <img
                   src={plantaBaja}
                   alt="Plano distribución interna de la Planta Baja"
@@ -161,8 +165,35 @@ export default function InternalDistribution() {
 
             {/* Derecha: Imagen (En mobile se posiciona arriba gracias a order-1 lg:order-2) */}
             {/* Derecha: Imagen (En mobile se posiciona arriba gracias a order-1 lg:order-2) */}
-            <div className="lg:col-span-7 w-full order-1 lg:order-2 flex justify-center items-center">
+            {/* Derecha: Imagen con Selector Integrado (En mobile se posiciona arriba gracias a order-1 lg:order-2) */}
+            <div className="lg:col-span-7 w-full order-1 lg:order-2 flex flex-col items-center space-y-6">
+              
+              {/* Contenedor del Toggle con Marco Fino Estilo Galería */}
+              <div className="inline-flex p-1 border border-black/10 rounded-none bg-transparent relative z-10">
+                <button
+                  onClick={() => setActiveTab('baja')}
+                  className={`px-8 py-3 text-xs md:text-sm font-sans font-medium uppercase tracking-widest transition-all duration-500 min-w-[140px] md:min-w-[180px] ${
+                    activeTab === 'baja'
+                      ? 'bg-[#2C352E] text-gold-600 shadow-lg'
+                      : 'text-black/60 hover:text-black hover:bg-black/[0.03]'
+                  }`}
+                >
+                  Planta Baja
+                </button>
+                <button
+                  onClick={() => setActiveTab('alta')}
+                  className={`px-8 py-3 text-xs md:text-sm font-sans font-medium uppercase tracking-widest transition-all duration-500 min-w-[140px] md:min-w-[180px] ${
+                    activeTab === 'alta'
+                      ? 'bg-[#2C352E] text-gold-600 shadow-lg'
+                      : 'text-black/60 hover:text-black hover:bg-black/[0.03]'
+                  }`}
+                >
+                  Planta Alta
+                </button>
+              </div>
+
               <div className="w-full max-w-[20rem] md:max-w-[25rem] relative overflow-hidden rounded-[2px] shadow-2xl border border-black/[0.05] group">
+
                 <img
                   src={plantaAlta}
                   alt="Plano distribución interna de la Planta Alta"
@@ -178,8 +209,6 @@ export default function InternalDistribution() {
 
         </div>
 
-        {/* Marca de Agua Elegante del Arbolito al final de la Sección */}
-        {/* Marca de Agua Premium con Scroll Parallax y Bounce (Estilo Hero) */}
         {/* Marca de Agua Premium con Scroll Parallax Estilo Hero Mínimalista */}
         <div 
           ref={parallaxRef}
