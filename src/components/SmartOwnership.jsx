@@ -1,12 +1,11 @@
-import salaFogata from '../assets/sala-fogata.jpeg';
+import salaFogata from '../assets/entrada-escaleras.webp';
 
 export default function SmartOwnership() {
   const services = [
     "Casa lista a tu llegada",
     "Mantenimiento y jardinería integral",
     "Seguridad y vigilancia 24/7",
-    "Reportes periódicos de administración y mantenimiento",
-    "Reserva de servicios y experiencias"
+    "Reportes periódicos de administración y mantenimiento"
   ];
 
   return (
@@ -38,7 +37,7 @@ export default function SmartOwnership() {
                 Servicios incluidos:
               </h4>
               
-              <ul className="space-y-4 !mt-8">
+              <ul className="space-y-6 !mt-8">
                 {services.map((service, index) => (
                   <li 
                     key={index} 

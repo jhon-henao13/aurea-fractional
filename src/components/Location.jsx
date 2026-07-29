@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import mapaEstilizado from '../assets/mapa-estilizado-gpt.png';
+import mapaEstilizado from '../assets/mapa-estilizado-gpt.webp';
 
 export default function Location() {
   const [isHovered, setIsHovered] = useState(false);

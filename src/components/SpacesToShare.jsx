@@ -1,4 +1,4 @@
-import blueHouse from '../assets/blue-house.jpeg';
+import blueHouse from '../assets/interior-billar.webp';
 
 export default function SpacesToShare() {
   const specs = [
@@ -26,7 +26,7 @@ export default function SpacesToShare() {
     },
     {
       id: 3,
-      value: "5",
+      value: "6",
       label: "Recámaras",
       // Icono de cama minimalista
       icon: (
@@ -48,7 +48,7 @@ export default function SpacesToShare() {
     },
     {
       id: 5,
-      value: "14",
+      value: "20",
       label: "Personas",
       // Icono elegante de huéspedes / capacidad
       icon: (
@@ -99,7 +99,7 @@ export default function SpacesToShare() {
           {/* Right Column: Narrative Block & Data Specs Grid */}
           <div className="lg:col-span-6 space-y-10">
             <p className="text-black/70 font-sans font-normal text-xl md:text-[24px] leading-relaxed max-w-xl">
-              Una residencia <b>de lujo</b> diseñada para reunir a toda la familia, con espacio de sobra para invitar cuando tú decidas.
+              Una residencia <b>de lujo</b> diseñada para reunir a toda la familia, con espacio de sobra para invitar <b>cuando tú decidas.</b>
             </p>
 
             {/* Technical Metrics / Icons Row */}

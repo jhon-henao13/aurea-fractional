@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import bgHero from '../assets/bg-hero-diego.jpeg';
+import bgHero from '../assets/bg-hero-2.webp';
 
 export default function Hero() {
 

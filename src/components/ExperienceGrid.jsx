@@ -1,7 +1,7 @@
-import coffeImg from '../assets/grid-4images/coffe-1ra.jpeg';
-import copasImg from '../assets/grid-4images/copas-2da.jpeg';
-import fogataImg from '../assets/grid-4images/fogata-3ra.jpeg';
-import atardecerImg from '../assets/grid-4images/atardecer-4ta.jpeg';
+import coffeImg from '../assets/grid-4images/coffe-1ra.webp';
+import copasImg from '../assets/grid-4images/copas-2da.webp';
+import fogataImg from '../assets/grid-4images/fogata-3ra.webp';
+import atardecerImg from '../assets/grid-4images/atardecer-4ta.webp';
 
 export default function ExperienceGrid() {
   const experiences = [
@@ -46,7 +46,11 @@ export default function ExperienceGrid() {
                 <img 
                   src={item.image} 
                   alt={item.title}
-                  className="w-full h-full object-cover transform scale-100 transition-transform duration-[1.5s] cubic-bezier(0.25, 1, 0.5, 1) group-hover:scale-105"
+                  className={`w-full h-full object-cover transform transition-transform duration-[1.5s] cubic-bezier(0.25, 1, 0.5, 1) ${
+                    index === 3 
+                      ? "object-right scale-110 group-hover:scale-[1.15]" // <--- Añadido object-right para desplazarla a la derecha
+                      : "object-center scale-100 group-hover:scale-105"  
+                  }`}
                   loading="lazy"
                 />
 

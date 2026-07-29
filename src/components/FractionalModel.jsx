@@ -30,13 +30,13 @@ export default function FractionalModel() {
       desc: "Iguales en tamaño y derechos. Ocho disponibles para compra, dos con los socios fundadores."
     },
     {
-      number: "14",
+      number: "20",
       title: "Huéspedes",
       desc: "Iguales en tamaño y derechos. Capacidad total de ocupación. Espacios diseñados para familias y grupos de amigos."
     },
     {
-      number: "∞",
-      title: "Experiencias",
+      number: "5",
+      title: "Semanas",
       desc: "Cada visita es una oportunidad para vivir el destino de una forma completamente diferente."
     }
   ];
@@ -58,7 +58,7 @@ export default function FractionalModel() {
             Sencillo y elegante
           </p>
           <p className="text-[#f4f0e8]/80 font-sans font-normal text-lg md:text-2xl leading-relaxed max-w-5xl pt-4">
-            Diez fracciones con derechos reales sobre el inmueble, respaldados por un fideicomiso. Cada copropietario accede por igual a los espacios, con reglas de salida establecidas desde el inicio.
+            Diez fracciones con derechos sobre el inmueble, respaldados por un fideicomiso. Cada copropietario accede por igual a los espacios, con reglas de salida establecidas desde el inicio.
           </p>
         </div>
 
