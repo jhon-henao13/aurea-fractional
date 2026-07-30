@@ -1,23 +1,36 @@
 import { useState } from 'react';
 
-// Importación de las 6 imágenes desde la subcarpeta correspondiente
-import vistaAerea1 from '../assets/grid-6images/vista-aerea-1ra.png';
-import vistaAereaLluvia2 from '../assets/grid-6images/vista-aerea-lluvia-2da.png';
-import sala3 from '../assets/grid-6images/sala-3ra.jpeg';
-import pasilloSala4 from '../assets/grid-6images/pasillo-sala-4ta.jpeg';
-import bano5 from '../assets/grid-6images/baño-5ta.jpeg';
-import patioTrasero6 from '../assets/grid-6images/patio-trasero-6ta.jpeg';
+// Importación de las imágenes desde la subcarpeta correspondiente
+import vistaAerea1 from '../assets/grid-6images/vista-aerea-1ra.webp';
+import vistaAereaLluvia2 from '../assets/grid-6images/vista-aerea-lluvia-2da.webp';
+import sala3 from '../assets/grid-6images/sala-3ra.webp';
+import pasilloSala4Alt from '../assets/grid-6images/pasillo-sala-4ta2.webp';
+import bano5 from '../assets/grid-6images/baño-5ta.webp';
+import fachadaFrente from '../assets/grid-6images/fachada-frente.webp';
+import closeUpCocina from '../assets/grid-6images/close-up-cocina.webp';
+import comedorChimenea from '../assets/grid-6images/comedor-sala-chimenea.webp';
+import recamara1 from '../assets/grid-6images/recamara1.webp';
+import recamara2 from '../assets/grid-6images/recamara2.webp';
+import salaTvBillar from '../assets/grid-6images/sala-tv-billar.webp';
+import terrazaFogata from '../assets/bg-hero-2.webp';
 
 export default function GalleryGrid() {
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
   const images = [
+    { src: fachadaFrente, alt: "Fachada frontal principal de la propiedad en el entorno boscoso" },
     { src: vistaAerea1, alt: "Vista aérea diurna de la propiedad integrada con el bosque" },
     { src: vistaAereaLluvia2, alt: "Vista aérea nocturna y atmosférica bajo la lluvia" },
-    { src: sala3, alt: "Comedor principal y estancia con ventanales de piso a techo" },
-    { src: pasilloSala4, alt: "Pasillo conector y transición arquitectónica de espacios abiertos" },
+    { src: comedorChimenea, alt: "Comedor y sala principal con chimenea de diseño contemporáneo" },
+    { src: sala3, alt: "Estancia principal con ventanales de piso a techo" },
+    { src: closeUpCocina, alt: "Cocina integral de alta gama con acabados modernos" },
+    { src: pasilloSala4Alt, alt: "Pasillo conector principal y transición arquitectónica" },
     { src: bano5, alt: "Cuarto de baño de lujo con acabados de piedra natural y espejos retroiluminados" },
-    { src: patioTrasero6, alt: "Patio trasero y fachada posterior orientada al jardín y pinos" }
+    { src: recamara1, alt: "Recámara principal con iluminación cálida y vista al exterior" },
+    { src: recamara2, alt: "Recámara secundaria con diseño minimalista y confortable" },
+    { src: salaTvBillar, alt: "Sala de televisión y área de juegos con mesa de billar" },
+    { src: terrazaFogata, alt: "Terraza exterior con área de fogata y espacio de convivencia rodeado por el bosque" }
+
   ];
 
   const openLightbox = (index) => setLightboxIndex(index);

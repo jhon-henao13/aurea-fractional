@@ -1,10 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import plantaBaja from '../assets/planta-baja.jpeg';
-import plantaAlta from '../assets/planta-alta.jpeg';
+import plantaAlta from '../assets/planta-alta.png';
 
 export default function InternalDistribution() {
   const [activeTab, setActiveTab] = useState('baja'); // 'baja' o 'alta'
-
   const [offsetY, setOffsetY] = useState(0);
   const parallaxRef = useRef(null);
 
@@ -14,9 +13,7 @@ export default function InternalDistribution() {
       const rect = parallaxRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
       
-      // Calculamos el desplazamiento solo cuando el contenedor entra en el viewport
       if (rect.top < viewportHeight && rect.bottom > 0) {
-        // Multiplicador 0.15 para que baje progresivamente con el scroll
         const scrollPosition = (viewportHeight - rect.top) * 0.15;
         setOffsetY(scrollPosition);
       }
@@ -26,215 +23,224 @@ export default function InternalDistribution() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const bajaFeatures = [
-    { num: "01", title: "Cocina de alta gama", desc: "Diseñada para cocinar, compartir y disfrutar largas sobremesas." },
-    { num: "02", title: "Sala de billar", desc: "Un espacio relajado para momentos memorables." },
-    { num: "03", title: "Comedor principal", desc: "Pensado para recibir 14 personas alrededor de una misma mesa." },
-    { num: "04", title: "Sala con chimenea", desc: "El corazón del hogar y punto de encuentro durante las noches." },
-    { num: "05", title: "Terraza con asador", desc: "El lugar para prolongar la sobremesa al aire libre." }
+  // DATOS PLANTA BAJA (Divididos para columna izquierda y derecha)
+  const bajaFeaturesLeft = [
+    { num: "1", title: "Acceso y vestíbulo" },
+    { num: "2", title: "Sala Principal" },
+    { num: "3", title: "Comedor" },
+    { num: "4", title: "Cocina de Alta Gama" },
+    { num: "5", title: "Bar & Lounge" },
+    { num: "6", title: "Sala de billar" },
+    { num: "7", title: "Sala de TV (Family room)" },
+    { num: "8", title: "Terraza Techada" }
   ];
 
+  const bajaFeaturesRight = [
+    { num: "9", title: "Área de Lavado" },
+    { num: "10", title: "Cuarto de Servicio" },
+    { num: "11", title: "Bodega" },
+    { num: "12", title: "Recámaras Secundarias" },
+    { num: "13", title: "Jardín Central" }
+  ];
+
+  // DATOS PLANTA ALTA
   const altaFeatures = [
-    { num: "01", title: "Recámara principal", desc: "Con baño completo y un ambiente pensado para el descanso." },
-    { num: "02", title: "Estudio privado", desc: "Ideal para trabajar, leer o disfrutar momentos de tranquilidad." },
-    { num: "03", title: "Rooftop privado", desc: "Un espacio exclusivo para contemplar el bosque y los atardeceres." },
-    { num: "04", title: "Recámaras secundarias", desc: "Cómodas y funcionales para recibir a toda la familia y amigos." }
+    { num: "1", title: "Recámara Principal (Master Suite)" },
+    { num: "2", title: "Recámaras Secundarias" },
+    { num: "3", title: "Rooftop" },
+    { num: "4", title: "Estudio" },
+    { num: "5", title: "Cochera Techada" }
   ];
 
   return (
-    <section id="distribucion" className="bg-[#f4f0e8] py-10 md:py-16 px-6 md:px-16 overflow-hidden relative">
-      <div className="max-w-7xl mx-auto flex flex-col space-y-12 items-center">
+    <section id="distribucion" className="bg-[#f4f0e8] py-10 md:py-16 px-6 md:px-12 overflow-hidden relative font-serif text-[#2C352E]">
+      <div className="max-w-7xl mx-auto flex flex-col items-center">
         
-        {/* CONTROL DE INTERFAZ: Selector de Plantas Premium */}
-        {/* Encabezado de la Sección */}
-        <div className="flex flex-col items-center w-full mb-2">
-          <span className="text-black/70 font-sans text-xs md:text-sm uppercase tracking-widest font-semibold">
-            Distribución Interna
+        {/* CONTROL DE INTERFAZ: Toggle de Plantas */}
+        <div className="flex flex-col items-center space-y-4 w-full mb-8 relative z-20">
+          <span className="text-[#b89c66] font-sans text-xs uppercase tracking-[0.25em] font-semibold">
+            Distribución Arquitectónica
           </span>
+          
+          <div className="inline-flex p-1 border border-[#b89c66]/30 bg-white/50 backdrop-blur-sm">
+            <button
+              onClick={() => setActiveTab('baja')}
+              className={`px-6 py-2 text-xs md:text-sm font-sans font-medium uppercase tracking-widest transition-all duration-500 min-w-[130px] md:min-w-[160px] ${
+                activeTab === 'baja'
+                  ? 'bg-[#2C352E] text-[#d4af37] shadow-md'
+                  : 'text-black/60 hover:text-black hover:bg-black/[0.03]'
+              }`}
+            >
+              Planta Baja
+            </button>
+            <button
+              onClick={() => setActiveTab('alta')}
+              className={`px-6 py-2 text-xs md:text-sm font-sans font-medium uppercase tracking-widest transition-all duration-500 min-w-[130px] md:min-w-[160px] ${
+                activeTab === 'alta'
+                  ? 'bg-[#2C352E] text-[#d4af37] shadow-md'
+                  : 'text-black/60 hover:text-black hover:bg-black/[0.03]'
+              }`}
+            >
+              Planta Alta
+            </button>
+          </div>
         </div>
 
-        {/* CONTENEDOR DE CONTENIDO CON ANIMACIÓN DE TRANSICIÓN CRUZADA */}
-        {/* CONTENEDOR DE CONTENIDO CON ANIMACIÓN DE TRANSICIÓN CRUZADA */}
-        <div className="w-full relative min-h-[1050px] sm:min-h-[1100px] lg:min-h-[650px] mt-2">
+        {/* CONTENEDOR CON ANIMACIÓN DE TRANSICIÓN */}
+        <div className="w-full relative min-h-[1250px] sm:min-h-[1200px] lg:min-h-[720px] mt-2">
           
-          {/* ================= PLANTA BAJA BLOCK (Imagen Izquierda, Texto Derecha) ================= */}
+          {/* ================= PLANTA BAJA BLOCK ================= */}
           <div
-            className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center absolute inset-0 w-full h-full transition-all duration-700 cubic-bezier(0.25, 1, 0.5, 1) ${
+            className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start absolute inset-0 w-full h-full transition-all duration-700 cubic-bezier(0.25, 1, 0.5, 1) ${
               activeTab === 'baja'
                 ? 'opacity-100 translate-x-0 pointer-events-auto scale-100'
                 : 'opacity-0 -translate-x-8 pointer-events-none scale-[0.98]'
             }`}
           >
-            {/* Izquierda: Imagen */}
-            {/* Izquierda: Imagen */}
-            {/* Izquierda: Imagen con Selector Integrado */}
-            <div className="lg:col-span-7 w-full order-1 flex flex-col items-center space-y-6">
-              
-              {/* Contenedor del Toggle con Marco Fino Estilo Galería */}
-              <div className="inline-flex p-1 border border-black/10 rounded-none bg-transparent relative z-10">
-                <button
-                  onClick={() => setActiveTab('baja')}
-                  className={`px-8 py-3 text-xs md:text-sm font-sans font-medium uppercase tracking-widest transition-all duration-500 min-w-[140px] md:min-w-[180px] ${
-                    activeTab === 'baja'
-                      ? 'bg-[#2C352E] text-gold-600 shadow-lg'
-                      : 'text-black/60 hover:text-black hover:bg-black/[0.03]'
-                  }`}
-                >
-                  Planta Baja
-                </button>
-                <button
-                  onClick={() => setActiveTab('alta')}
-                  className={`px-8 py-3 text-xs md:text-sm font-sans font-medium uppercase tracking-widest transition-all duration-500 min-w-[140px] md:min-w-[180px] ${
-                    activeTab === 'alta'
-                      ? 'bg-[#2C352E] text-gold-600 shadow-lg'
-                      : 'text-black/60 hover:text-black hover:bg-black/[0.03]'
-                  }`}
-                >
-                  Planta Alta
-                </button>
+            {/* Columna Izquierda: Título y Lista 1 a 8 */}
+            <div className="lg:col-span-4 space-y-6 order-1">
+              <div>
+                <h2 className="text-5xl lg:text-6xl font-light text-[#1a1a1a] tracking-tight">
+                  Diseñada
+                </h2>
+                <span className="text-4xl lg:text-5xl italic text-[#b89c66] font-normal block mt-1 mb-4">
+                  para recibir
+                </span>
+                <p className="text-sm md:text-base text-black/70 font-sans !leading-relaxed max-w-xs mb-6">
+                  Espacios para compartir momentos memorables, rodeados de naturaleza y confort.
+                </p>
               </div>
 
-              <div className="w-full max-w-[20rem] md:max-w-[25rem] relative overflow-hidden rounded-[2px] shadow-2xl border border-black/[0.05] group">
-              
-                <img
-                  src={plantaBaja}
-                  alt="Plano distribución interna de la Planta Baja"
-                  className="w-full h-auto object-cover transform scale-100 transition-transform duration-[3s] group-hover:scale-[1.01] rounded-xl"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/[0.02] to-transparent pointer-events-none" />
-              </div>
-            </div>
-
-            {/* Derecha: Especificaciones */}
-            <div className="lg:col-span-5 space-y-8 order-2 pl-0 lg:pl-4">
-              <div className="space-y-6">
-                {bajaFeatures.map((feature, i) => (
-                  <div 
-                    key={i} 
-                    className="group flex items-start space-x-6 border-b border-black/[0.05] pb-5 last:border-0 cursor-default"
-                  >
-                    <span className="text-gold-600 font-serif font-light text-xl md:text-2xl pt-0.5 transition-transform duration-300 group-hover:translate-x-1 block">
-                      {feature.num}
+              <div className="space-y-3">
+                {bajaFeaturesLeft.map((item) => (
+                  <div key={item.num} className="flex items-baseline border-b border-[#c8beaa]/70 pb-2">
+                    <span className="text-[#b89c66] font-serif text-sm md:text-base w-8 shrink-0">
+                      {item.num}
                     </span>
-                    <div className="space-y-4">
-                      <h4 className="text-black/70 font-serif font-normal text-lg tracking-wide group-hover:text-gold-600 transition-colors duration-300">
-                        {feature.title}
-                      </h4>
-                      <p className="text-black/70 font-sans font-normal text-base md:text-lg leading-relaxed">
-                        {feature.desc}
-                      </p>
-                    </div>
+                    <span className="text-black/80 font-serif text-sm md:text-lg tracking-wide">
+                      {item.title}
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
+
+            {/* Columna Central: Etiqueta e Imagen Plano */}
+            <div className="lg:col-span-5 flex flex-col items-center order-2">
+              <span className="text-[#b89c66] font-serif uppercase tracking-[0.2em] text-sm md:text-base font-medium mb-4 text-center">
+                PLANTA BAJA
+              </span>
+              <div className="w-full max-w-[22rem] md:max-w-[26rem] relative overflow-hidden group">
+                <img
+                  src={plantaBaja}
+                  alt="Plano Planta Baja"
+                  className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.01]"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Columna Derecha: Lista 9 a 13 y Nota Legal */}
+            <div className="lg:col-span-3 flex flex-col justify-between h-full order-3 lg:pt-28">
+              <div className="space-y-3">
+                {bajaFeaturesRight.map((item) => (
+                  <div key={item.num} className="flex items-baseline border-b border-[#c8beaa]/80 pb-2">
+                    <span className="text-[#b89c66] font-serif text-sm md:text-base w-8 shrink-0">
+                      {item.num}
+                    </span>
+                    <span className="text-black/80 font-serif text-sm md:text-lg tracking-wide">
+                      {item.title}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 lg:mt-auto pt-6 text-[10px] md:text-xs text-black/50 font-sans leading-tight">
+                <p>Imagen ilustrativa.</p>
+                <p>El proyecto podrá presentar variaciones durante su ejecución.</p>
+              </div>
+            </div>
           </div>
 
-          {/* ================= PLANTA ALTA BLOCK (Texto Izquierda, Imagen Derecha) ================= */}
+          {/* ================= PLANTA ALTA BLOCK ================= */}
           <div
-            className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center absolute inset-0 w-full h-full transition-all duration-700 cubic-bezier(0.25, 1, 0.5, 1) ${
+            className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start absolute inset-0 w-full h-full transition-all duration-700 cubic-bezier(0.25, 1, 0.5, 1) ${
               activeTab === 'alta'
                 ? 'opacity-100 translate-x-0 pointer-events-auto scale-100'
                 : 'opacity-0 translate-x-8 pointer-events-none scale-[0.98]'
             }`}
           >
-            {/* Izquierda: Especificaciones (En mobile se apila abajo gracias a order-2 lg:order-1) */}
-            <div className="lg:col-span-5 space-y-8 order-2 lg:order-1 pr-0 lg:pr-4">
-              <div className="space-y-6">
-                {altaFeatures.map((feature, i) => (
-                  <div 
-                    key={i} 
-                    className="group flex items-start space-x-6 border-b border-black/[0.05] pb-4 last:border-0 cursor-default"
-                  >
-                    <span className="text-gold-600 font-serif font-light text-xl md:text-2xl pt-0.5 transition-transform duration-300 group-hover:translate-x-1 block">
-                      {feature.num}
+            {/* Columna Izquierda: Título y Lista 1 a 5 */}
+            <div className="lg:col-span-4 space-y-6 order-1">
+              <div>
+                <h2 className="text-5xl lg:text-6xl font-light text-[#1a1a1a] tracking-tight">
+                  Diseñada
+                </h2>
+                <span className="text-4xl lg:text-5xl italic text-[#b89c66] font-normal block mt-1 mb-4">
+                  para recibir
+                </span>
+                <p className="text-sm md:text-base text-black/70 font-sans !leading-relaxed max-w-xs mb-6">
+                  Espacios para compartir momentos memorables, rodeados de naturaleza y confort.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                {altaFeatures.map((item) => (
+                  <div key={item.num} className="flex items-baseline border-b border-[#c8beaa]/80 pb-2">
+                    <span className="text-[#b89c66] font-serif text-sm md:text-base w-8 shrink-0">
+                      {item.num}
                     </span>
-                    <div className="space-y-4">
-                      <h4 className="text-black/70 font-serif font-normal text-lg tracking-wide group-hover:text-gold-600 transition-colors duration-300">
-                        {feature.title}
-                      </h4>
-                      <p className="text-black/70 font-sans font-normal text-base md:text-lg leading-relaxed">
-                        {feature.desc}
-                      </p>
-                    </div>
+                    <span className="text-black/80 font-serif text-sm md:text-lg tracking-wide">
+                      {item.title}
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Derecha: Imagen (En mobile se posiciona arriba gracias a order-1 lg:order-2) */}
-            {/* Derecha: Imagen (En mobile se posiciona arriba gracias a order-1 lg:order-2) */}
-            {/* Derecha: Imagen con Selector Integrado (En mobile se posiciona arriba gracias a order-1 lg:order-2) */}
-            <div className="lg:col-span-7 w-full order-1 lg:order-2 flex flex-col items-center space-y-6">
-              
-              {/* Contenedor del Toggle con Marco Fino Estilo Galería */}
-              <div className="inline-flex p-1 border border-black/10 rounded-none bg-transparent relative z-10">
-                <button
-                  onClick={() => setActiveTab('baja')}
-                  className={`px-8 py-3 text-xs md:text-sm font-sans font-medium uppercase tracking-widest transition-all duration-500 min-w-[140px] md:min-w-[180px] ${
-                    activeTab === 'baja'
-                      ? 'bg-[#2C352E] text-gold-600 shadow-lg'
-                      : 'text-black/60 hover:text-black hover:bg-black/[0.03]'
-                  }`}
-                >
-                  Planta Baja
-                </button>
-                <button
-                  onClick={() => setActiveTab('alta')}
-                  className={`px-8 py-3 text-xs md:text-sm font-sans font-medium uppercase tracking-widest transition-all duration-500 min-w-[140px] md:min-w-[180px] ${
-                    activeTab === 'alta'
-                      ? 'bg-[#2C352E] text-gold-600 shadow-lg'
-                      : 'text-black/60 hover:text-black hover:bg-black/[0.03]'
-                  }`}
-                >
-                  Planta Alta
-                </button>
-              </div>
-
-              <div className="w-full max-w-[20rem] md:max-w-[25rem] relative overflow-hidden rounded-[2px] shadow-2xl border border-black/[0.05] group">
-
+            {/* Columna Central: Etiqueta e Imagen Plano */}
+            <div className="lg:col-span-5 flex flex-col items-center order-2">
+              <span className="text-[#b89c66] font-serif uppercase tracking-[0.2em] text-sm md:text-base font-medium mb-4 text-center">
+                PLANTA ALTA
+              </span>
+              <div className="w-full max-w-[22rem] md:max-w-[26rem] relative overflow-hidden group">
                 <img
                   src={plantaAlta}
-                  alt="Plano distribución interna de la Planta Alta"
-                  className="w-full h-auto object-cover transform scale-100 transition-transform duration-[3s] group-hover:scale-[1.01] rounded-xl"
+                  alt="Plano Planta Alta"
+                  className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.01]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/[0.02] to-transparent pointer-events-none" />
               </div>
             </div>
 
-            
+            {/* Columna Derecha: Solo Nota Legal */}
+            <div className="lg:col-span-3 flex flex-col justify-end h-full order-3">
+              <div className="mt-8 lg:mt-auto pt-6 text-[10px] md:text-xs text-black/50 font-sans leading-tight">
+                <p>Imagen ilustrativa.</p>
+                <p>El proyecto podrá presentar variaciones durante su ejecución.</p>
+              </div>
+            </div>
           </div>
 
         </div>
 
-        {/* Marca de Agua Premium con Scroll Parallax Estilo Hero Mínimalista */}
+        {/* Marca de Agua con Parallax Scroll */}
         <div 
           ref={parallaxRef}
-          className="w-full flex justify-center pt-14 pb-4 relative z-10 pointer-events-none overflow-visible"
+          className="w-full flex justify-center pt-10 pb-4 relative z-10 pointer-events-none overflow-visible"
         >
-          {/* Contenedor con físicas de scroll reactivas */}
           <div 
             className="flex flex-col items-center transition-transform duration-500 ease-out will-change-transform"
             style={{ transform: `translateY(${offsetY}px)` }}
           >
-            {/* Animación de rebote ralentizada a 3 segundos para máxima elegancia */}
             <div className="flex flex-col items-center justify-center animate-[bounce_3s_infinite]">
-              
-              {/* Flechita Superior (Chevron indicador copiado del concepto de navegación del Hero) */}
-              <svg className="w-3.5 h-3.5 text-gold-600/70 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 text-[#b89c66]/70 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
               </svg>
-
-              {/* Icono de Pino Estilizado, más visible y nítido (Sin bordes ni fondos intermediarios) */}
-              <svg className="w-6 h-6 text-gold-600 filter drop-shadow-[0_2px_4px_rgba(44,53,46,0.08)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-[#b89c66] filter drop-shadow-[0_2px_4px_rgba(44,53,46,0.08)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.1} d="M12 2L5 12h4v4h3v4h2v-4h3v-4h4L12 2z" />
               </svg>
-              
-              {/* Línea de fuga arquitectónica vertical degradada */}
-              <div className="w-[1px] h-14 bg-gradient-to-b from-gold-600 via-gold-600/30 to-transparent mt-2.5"></div>
-              
+              <div className="w-[1px] h-14 bg-gradient-to-b from-[#b89c66] via-[#b89c66]/30 to-transparent mt-2.5" />
             </div>
           </div>
         </div>

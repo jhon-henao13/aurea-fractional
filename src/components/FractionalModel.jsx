@@ -32,7 +32,7 @@ export default function FractionalModel() {
     {
       number: "20",
       title: "Huéspedes",
-      desc: "Iguales en tamaño y derechos. Capacidad total de ocupación. Espacios diseñados para familias y grupos de amigos."
+      desc: "Capacidad total de ocupación. Espacios diseñados para familias y grupos de amigos."
     },
     {
       number: "5",
