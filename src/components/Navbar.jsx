@@ -7,7 +7,6 @@ export default function Navbar() {
 
   // Mapeo estratégico de secciones vinculando nombres con IDs específicos
   const navigationLinks = [
-    { name: 'Co-Propiedad', href: '#co-propiedad' },
     { name: 'Proyecto', href: '#proyecto' },
     { name: 'Fraccional', href: '#fraccional' },
     { name: 'Ubicación', href: '#ubicacion' }
@@ -43,7 +42,7 @@ export default function Navbar() {
             <img 
               src={logo} 
               alt="Aurea Fractional" 
-              className="h-12 md:h-14 w-auto object-contain brightness-0 invert transition-transform duration-300 hover:scale-105"
+              className="h-12 md:h-14 w-auto object-contain transition-transform duration-300 hover:scale-105"
             />
           </a>
 
@@ -63,7 +62,7 @@ export default function Navbar() {
           {/* Botón de Conversión de Escritorio */}
           <div className="hidden md:block">
             <a href="#contacto" className="inline-block bg-gold-500/90 hover:bg-gold-500 text-white text-[10px] tracking-[0.2em] uppercase px-6 py-3.5 rounded-none transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-gold-500/10 font-semibold">
-              Recibe el brochure
+              Solicita el brochure
             </a>
           </div>
 
@@ -127,7 +126,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
             className="block text-center bg-gold-500 text-white text-xs tracking-[0.2em] uppercase py-4 w-full font-semibold transition-colors duration-300 hover:bg-gold-600"
           >
-            Recibe el brochure
+            Solicita el brochure
           </a>
         </div>
       </div>

@@ -45,13 +45,13 @@ export default function ContactCTA() {
           </h3>
 
             <p className="text-black/60 font-sans font-light text-base md:text-[20px] leading-relaxed">
-                Sólo 8/10 fracciones disponibles.
+                Sólo 7/10 fracciones disponibles.
             </p>
           
 
           {/* Botón Premium Interactivo */}
           <button className="w-full sm:w-auto min-w-[260px] bg-[#2C352E] text-[#F4F1EA] text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.2em] py-5 px-10 rounded-[3px] shadow-xl hover:bg-[#1E2922] transition-all duration-500 hover:scale-[1.02] active:scale-[0.99] border border-white/5 relative overflow-hidden group/btn">
-            <span className="relative z-10">Recibe el brochure</span>
+            <span className="relative z-10">Solicita el brochure</span>
             {/* Destello satinado interno al hover */}
             <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]" />
           </button>
