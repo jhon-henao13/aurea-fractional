@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 
 // Importación del nuevo componente de revelación premium
 import ScrollReveal from './components/ScrollReveal';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   return (
@@ -62,6 +63,8 @@ function App() {
       </main>
 
       <Footer />
+
+      <WhatsAppButton />
     </div>
   );
 }

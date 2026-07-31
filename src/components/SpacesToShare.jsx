@@ -15,7 +15,7 @@ export default function SpacesToShare() {
     },
     {
       id: 2,
-      value: "653 m2",
+      value: "630 m2",
       label: "Construcción",
       // Icono de fachada de residencia premium
       icon: (

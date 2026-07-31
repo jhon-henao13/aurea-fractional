@@ -68,13 +68,13 @@ export default function Footer() {
           </span>
           <div className="flex items-center space-x-4">
             {/* Facebook */}
-            <a href="#facebook" className="text-[#F4F1EA]/80 hover:text-gold-400 transition-colors p-1 transform hover:scale-110 duration-300">
+            <a href="#facebook" target="_blank" rel="noopener noreferrer" className="text-[#F4F1EA]/80 hover:text-gold-400 transition-colors p-1 transform hover:scale-110 duration-300">
               <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 12 22 12z" />
               </svg>
             </a>
             {/* Instagram */}
-            <a href="#instagram" className="text-[#F4F1EA]/80 hover:text-gold-400 transition-colors p-1 transform hover:scale-110 duration-300">
+            <a href="https://www.instagram.com/aureafractional" target="_blank" rel="noopener noreferrer" className="text-[#F4F1EA]/80 hover:text-gold-400 transition-colors p-1 transform hover:scale-110 duration-300">
               <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
                 <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/>
