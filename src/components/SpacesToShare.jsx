@@ -4,7 +4,7 @@ export default function SpacesToShare() {
   const specs = [
     {
       id: 1,
-      value: "1,750 m2",
+      value: "1,760 m2",
       label: "Terreno",
       // Icono de plano de terreno / cuadrícula estructural
       icon: (
@@ -15,7 +15,7 @@ export default function SpacesToShare() {
     },
     {
       id: 2,
-      value: "540 m2",
+      value: "653 m2",
       label: "Construcción",
       // Icono de fachada de residencia premium
       icon: (
