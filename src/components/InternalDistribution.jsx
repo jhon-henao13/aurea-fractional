@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import plantaBaja from '../assets/planta-baja.jpeg';
-import plantaAlta from '../assets/planta-alta.png';
+import plantaAlta from '../assets/planta-alta2.png';
 
 export default function InternalDistribution() {
   const [activeTab, setActiveTab] = useState('baja'); // 'baja' o 'alta'
