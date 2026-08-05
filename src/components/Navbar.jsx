@@ -30,6 +30,13 @@ export default function Navbar() {
     return () => { document.body.style.overflow = 'unset'; };
   }, [isOpen]);
 
+
+  // Número y mensaje codificados para la URL de WhatsApp (mismo que en WhatsAppButton)
+  const phoneNumber = '523324967419';
+  const message = encodeURIComponent('Hola, me interesa recibir información de Cabaña Pastores.');
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+
   return (
     <>
       <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
@@ -60,8 +67,14 @@ export default function Navbar() {
           </div>
 
           {/* Botón de Conversión de Escritorio */}
+          {/* Botón de Conversión de Escritorio */}
           <div className="hidden md:block">
-            <a href="#contacto" className="inline-block bg-gold-500/90 hover:bg-gold-500 text-white text-[10px] tracking-[0.2em] uppercase px-6 py-3.5 rounded-none transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-gold-500/10 font-semibold">
+            <a 
+              href={whatsappUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-gold-500/90 hover:bg-gold-500 text-white text-[10px] tracking-[0.2em] uppercase px-6 py-3.5 rounded-none transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-gold-500/10 font-semibold"
+            >
               Solicita el brochure
             </a>
           </div>
@@ -119,16 +132,20 @@ export default function Navbar() {
         </div>
 
         {/* Acciones del pie del Menú Móvil */}
+        {/* Acciones del pie del Menú Móvil */}
         <div className="space-y-6 w-full mb-4">
           <div className="h-[1px] bg-white/10 w-full" />
           <a 
-            href="#contacto"
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
             className="block text-center bg-gold-500 text-white text-xs tracking-[0.2em] uppercase py-4 w-full font-semibold transition-colors duration-300 hover:bg-gold-600"
           >
             Solicita el brochure
           </a>
         </div>
+
       </div>
     </>
   );
